@@ -17,7 +17,6 @@
                 {"label":"9", "x":9, "y":0},
                 {"label":"0", "x":10, "y":0},
                 {"label":"-", "x":11, "y":0},
-                {"label":"=", "x":12, "y":0},
                 {"label":"Tab", "x":0, "y":1},
                 {"label":"Q", "x":1, "y":1},
                 {"label":"W", "x":2, "y":1},
@@ -30,7 +29,6 @@
                 {"label":"O", "x":9, "y":1},
                 {"label":"P", "x":10, "y":1},
                 {"label":"[", "x":11, "y":1},
-                {"label":"]", "x":12, "y":1},
                 {"label":"`", "x":0, "y":2},
                 {"label":"A", "x":1, "y":2},
                 {"label":"S", "x":2, "y":2},
@@ -43,7 +41,6 @@
                 {"label":"L", "x":9, "y":2},
                 {"label":";", "x":10, "y":2},
                 {"label":",", "x":11, "y":2},
-                {"label":"\\", "x":12, "y":2},
                 {"label":"Shift", "x":0, "y":3},
                 {"label":"Z", "x":1, "y":3},
                 {"label":"X", "x":2, "y":3},
@@ -56,19 +53,19 @@
                 {"label":".", "x":9, "y":3},
                 {"label":"/", "x":10, "y":3},
                 {"label":"Enter", "x":11, "y":3},
-                {"label":"Up", "x":12, "y":3},
                 {"label":"Hyper", "x":0, "y":4},
                 {"label":"Ctrl", "x":1, "y":4},
                 {"label":"Alt", "x":2, "y":4},
                 {"label":"GUI", "x":3, "y":4},
                 {"label":"Lower", "x":4, "y":4},
-                {"label":"Space", "x":5, "y":4, "w":2},
+                {"label":"Space", "x":5, "y":4},
+                {"label":"Space", "x":6, "y":4},
                 {"label":"Raise", "x":7, "y":4},
                 {"label":"Backspace", "x":8, "y":4},
                 {"label":"Shift", "x":9, "y":4},
                 {"label":"Left", "x":10, "y":4},
-                {"label":"Right", "x":11, "y":4},
-                {"label":"Down", "x":12, "y":4}
+                {"label":"Right", "x":11, "y":4}
+
             ]
         }
     }

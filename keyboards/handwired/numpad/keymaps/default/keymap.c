@@ -1,0 +1,24 @@
+#include "kb.h"
+#include "keymap_extras/keymap_german_ch.h"
+
+enum layers {
+    _MAIN,
+    _ADJUST
+};
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
+	[_MAIN] = KEYMAP(MO(_ADJUST), KC_KP_SLASH, KC_KP_ASTERISK, KC_PGUP, 
+			KC_KP_7, KC_KP_8, KC_KP_9, KC_PGDN,
+			KC_KP_4, KC_KP_5, KC_KP_6, KC_KP_PLUS,
+			KC_KP_1, KC_KP_2, KC_KP_3, KC_KP_MINUS,
+			KC_KP_0, CH_COMM, KC_KP_DOT, KC_KP_ENTER
+		),
+
+	[_ADJUST] = KEYMAP(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+		KC_TRNS, KC_TRNS, KC_TRNS, RESET)
+
+};
