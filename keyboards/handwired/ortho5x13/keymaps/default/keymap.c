@@ -1,11 +1,34 @@
 #include QMK_KEYBOARD_H
 #include "keymap_german_ch.h"
 
+<<<<<<< HEAD
 enum layers {
   _QWERTY = 0,
   _LOWER = 1,
   _RAISE = 2,
   _FUNCTION
+=======
+// Each layer gets a name for readability, which is then used in the keymap matrix below.
+// The underscores don't mean anything - you can have a layer called STUFF or any other name.
+// Layer names don't all need to be of the same length, obviously, and you can also skip them
+// entirely and just use numbers.
+enum layer_names {
+    _QWERTY,
+    _COLEMAK,
+    _DVORAK,
+    _LOWER,
+    _RAISE,
+    _ADJUST
+};
+
+enum custom_keycodes {
+  QWERTY = SAFE_RANGE,
+  COLEMAK,
+  DVORAK,
+  LOWER,
+  RAISE,
+  BACKLIT
+>>>>>>> fe9c1d8e456c293166ff8664ff280710eb5aa416
 };
 
 #define FN MO(_FUNCTION)
@@ -102,12 +125,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |      |      |      |Lower | Ctrl |             |      |Raise |Enter |      |      |
    * `------------------------------------------------------------------------------------
  */
+<<<<<<< HEAD
 [_FUNCTION] = LAYOUT(
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12 , 
   _______, RESET,   _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL , 
   _______, _______, _______, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, _______,  _______, _______,  _______, _______, 
   _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______, 
   KC_HYPR ,KC_LGUI ,KC_SPC  ,MO(1),KC_LALT ,KC_LCTL ,KC_ENT  ,KC_BSPC ,MO(2),KC_SPC  ,KC_ENT  ,KC_RGHT 
+=======
+[_ADJUST] = LAYOUT(
+  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12 , _______,
+  _______, QK_BOOT,   _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL , _______,
+  _______, _______, _______, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  COLEMAK, DVORAK,  _______, _______, _______,
+  _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______, _______,
+  _______, _______, _______, _______, _______,     _______,      _______, _______, _______, _______, _______, _______
+>>>>>>> fe9c1d8e456c293166ff8664ff280710eb5aa416
 )
 
 

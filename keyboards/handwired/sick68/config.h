@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "config_common.h"
 
+<<<<<<< HEAD
 /* USB Device descriptor parameter */
 #define VENDOR_ID 0xFEED
 #define PRODUCT_ID 0x5F00
@@ -27,6 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT sick68
 #define DESCRIPTION A 3d printed custom keyboard
 
+=======
+>>>>>>> fe9c1d8e456c293166ff8664ff280710eb5aa416
 /* key matrix size */
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 15
@@ -44,8 +47,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROW_PINS \
     { B6, B5, B4, D7, D6 }
 #define MATRIX_COL_PINS \
+<<<<<<< HEAD
     { F5, F6, F7, B0, B1, B2, B3, B7, D0, D1, D2, D3, C6, C7, D4 }
 #define UNUSED_PINS
+=======
+    { C6, D7, E6, B4, B5, B0, D5, B6, B2, B3, B1, F7, F6, F5, F4 }
+>>>>>>> fe9c1d8e456c293166ff8664ff280710eb5aa416
 
 /* COL2ROW, ROW2COL*/
 #define DIODE_DIRECTION COL2ROW
@@ -174,6 +181,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
+<<<<<<< HEAD
 /* disable these deprecated features by default */
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
@@ -201,6 +209,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* override number of MIDI tone keycodes (each octave adds 12 keycodes and allocates 12 bytes) */
 //#define MIDI_TONE_KEYCODE_OCTAVES 1
 
+=======
+>>>>>>> fe9c1d8e456c293166ff8664ff280710eb5aa416
 /* Bootmagic Lite key configuration */
 // #define BOOTMAGIC_LITE_ROW 0
 // #define BOOTMAGIC_LITE_COLUMN 0
