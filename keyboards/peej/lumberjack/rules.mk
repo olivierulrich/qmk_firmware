@@ -18,5 +18,6 @@ RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
 KEY_LOCK_ENABLE = yes
+UNICODE_ENABLE = yes
 
 LAYOUTS = ortho_5x12

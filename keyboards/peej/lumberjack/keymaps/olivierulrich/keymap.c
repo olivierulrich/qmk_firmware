@@ -15,7 +15,7 @@
  */
 
 #include QMK_KEYBOARD_H
-#include "keymap_german_CH.h"
+#include "keymap_swiss_de.h"
 
 enum layers {
   _QWERTY = 0,
@@ -23,6 +23,13 @@ enum layers {
   _RAISE = 2,
   _FUNCTION
 };
+
+enum custom_keycodes {
+    AE = SAFE_RANGE,
+    OE,
+    UE
+};
+
 
 #define FN MO(_FUNCTION)
 
@@ -84,9 +91,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------' `-----------------------------------------'
  */
 [_RAISE] = LAYOUT_ortho_5x12(
-    KC_NO,   CH_BRKP,    KC_AT,    KC_HASH,    KC_NO,    KC_NO,    CH_NOT,    KC_PIPE,    CH_CENT,    KC_LCBR,    KC_RCBR,    KC_TRNS,
-    KC_TRNS, KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    CH_UDIA,    KC_NO,    CH_ODIA,    KC_NO,    KC_TRNS,
-    KC_TRNS, CH_ADIA,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_LBRC, KC_RBRC,
+    KC_NO,   KC_NO,    KC_AT,    KC_HASH,    KC_NO,    KC_NO,    KC_NO,    KC_PIPE,    KC_NO,    KC_LCBR,    KC_RCBR,    KC_TRNS,
+    KC_TRNS, KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    UE,    KC_NO,    OE,    KC_NO,    KC_TRNS,
+    KC_TRNS, AE,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_LBRC, KC_RBRC,
     KC_TRNS, KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_MINS, KC_EQL,  KC_BSLS, KC_ENT,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO(1),   KC_TRNS,  KC_TRNS,  MO(2),   KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS
 ),
@@ -112,4 +119,46 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
 )
 
+};
+
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+   switch (keycode) {
+   case AE:
+       if (record->event.pressed) {
+           SEND_STRING(
+            SS_DOWN(X_LGUI) SS_TAP(X_SPC) SS_UP(X_LGUI)
+            );
+           tap_code(CH_ADIA);
+           SEND_STRING(
+           SS_DOWN(X_LGUI) SS_TAP(X_SPC) SS_UP(X_LGUI)
+            );
+       }
+       break;
+
+   case OE:
+       if (record->event.pressed) {
+           SEND_STRING(
+            SS_DOWN(X_LGUI) SS_TAP(X_SPC) SS_UP(X_LGUI)
+            );
+           tap_code(CH_ODIA);
+           SEND_STRING(
+           SS_DOWN(X_LGUI) SS_TAP(X_SPC) SS_UP(X_LGUI)
+            );
+       }
+       break;
+
+   case UE:
+       if (record->event.pressed) {
+           SEND_STRING(
+            SS_DOWN(X_LGUI) SS_TAP(X_SPC) SS_UP(X_LGUI)
+            );
+           tap_code(CH_UDIA);
+           SEND_STRING(
+           SS_DOWN(X_LGUI) SS_TAP(X_SPC) SS_UP(X_LGUI)
+            );
+       }
+       break;
+   }
+   return true;
 };
